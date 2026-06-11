@@ -1,0 +1,157 @@
+<div data-folder="cs" class="card rounded">
+    <div class="play">
+        <div class="playCircle">
+            <svg viewBox="0 0 24 24" width="18">
+                <polygon points="5,3 19,12 5,21"/>
+            </svg>
+        </div>
+    </div>
+<img src="img2.jpeg">
+<div class="cardInfo">
+<div class="song">Song Name</div>
+<div class="artist">Artist Name</div>
+</div>
+</div>
+<div data-folder="cs" class="card rounded">
+    <div class="play">
+        <div class="playCircle">
+            <svg viewBox="0 0 24 24" width="18">
+                <polygon points="5,3 19,12 5,21"/>
+            </svg>
+        </div>
+    </div>
+<img src="img3.jpeg">
+<div class="cardInfo">
+<div class="song">Song Name</div>
+<div class="artist">Artist Name</div>
+</div>
+</div>
+<div data-folder="cs" class="card rounded">
+    <div class="play">
+        <div class="playCircle">
+            <svg viewBox="0 0 24 24" width="18">
+                <polygon points="5,3 19,12 5,21"/>
+            </svg>
+        </div>
+    </div>
+<img src="img4.jpeg">
+<div class="cardInfo">
+<div class="song">Song Name</div>
+<div class="artist">Artist Name</div>
+</div>
+</div>
+<div data-folder="cs" class="card rounded">
+    <div class="play">
+        <div class="playCircle">
+            <svg viewBox="0 0 24 24" width="18">
+                <polygon points="5,3 19,12 5,21"/>
+            </svg>
+        </div>
+    </div>
+<img src="img5.jpeg">
+<div class="cardInfo">
+<div class="song">Song Name</div>
+<div class="artist">Artist Name</div>
+</div>
+</div>
+<div data-folder="cs" class="card rounded">
+    <div class="play">
+        <div class="playCircle">
+            <svg viewBox="0 0 24 24" width="18">
+                <polygon points="5,3 19,12 5,21"/>
+            </svg>
+        </div>
+    </div>
+<img src="Dhurandhar.jpeg">
+<div class="cardInfo">
+<div class="song">Song Name</div>
+<div class="artist">Artist Name</div>
+</div>
+</div>
+
+
+async function displayAlbums() {
+    // console.log('displayAlbums is called');
+
+    let a = await fetch(`http://127.0.0.1:5500/songs/`);
+
+
+
+
+    let response = await a.text();
+    // console.log(response);
+    let div = document.createElement("div");
+    div.innerHTML = response;
+    // console.log(response);
+    let anchors = div.getElementsByTagName("a");let cardContainer=document.querySelector(".cardContainer");
+    console.log(document.querySelector(".cardContainer").innerHTML);
+    let array=Array.from(anchors)
+        for (let index = 0; index < array.length; index++) {
+            const e = array[index];
+        
+        let href = decodeURIComponent(e.getAttribute("href"))
+            .replaceAll("\\", "/");
+
+        if (href.includes("/songs/")) {
+            let folder = href.split("/").slice(-2)[0];
+            //  Get metadata of the folder
+            let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`)
+            let response = await a.json();
+            console.log(response);
+            cardContainer.innerHTML += `<div data-folder="ncs" class="card rounded">
+    <div class="play">
+        <div class="playCircle">
+            <svg viewBox="0 0 24 24" width="18">
+                <polygon points="5,3 19,12 5,21"/>
+            </svg>
+        </div>
+    </div>
+<img src="/songs/${folder}/cover.jpeg">
+<div class="cardInfo">
+<div class="song">${response.title}</div>
+<div class="artist">${response.description}</div>
+</div>
+</div>`
+        }
+
+    }
+    // Load playlist whenever card is clicked
+
+    Array.from(document.getElementsByClassName("card")).forEach(e => {
+        e.addEventListener("click", async item => {
+            await getSongs(`songs/${item.currentTarget
+                .dataset.folder}`);
+            playMusic(songs[0], true);
+        })
+    })
+}
+* {
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+@media(max-width:580px){
+    .cardContainer{
+        margin: 0;
+        padding: 0 5px;
+    }
+    .right{
+        width: 100%;
+    }
+    .left,.right{
+        margin: 0;
+        padding: 0;
+    }
+    .left{
+        width: 80%;
+        max-width: 300px;
+    }
+    .playbar{
+        left: 1vw;
+        width: 98vw;
+        bottom: 0;
+    }
+    
+}

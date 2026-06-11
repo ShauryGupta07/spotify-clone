@@ -1,0 +1,25 @@
+            <div class="card1 rounded">
+                <div>Create your first playlist</div>
+                <div>It's easy, we'll help you</div>
+                <button class="btn">Create Playlist</button>
+            </div>
+            <div class="card2 rounded">
+                <div>Let's find some podcasts to follow</div>
+                <div>We'll keep you updated on new episodes</div>
+                <button class="btn">Browse podcasts</button>
+            </div>
+
+            <div class="play"><div style="width:39px;height:39px;background:#1db954;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 24 24" width="18"><polygon points="5,3 19,12 5,21"/></svg>
+
+.play {
+    position: absolute;
+    right: 15px;
+    bottom: 85px;
+}
+
+.play svg {
+    width: 25px;
+    height: 25px;
+    fill: black;
+}

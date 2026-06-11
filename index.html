@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify - Web Player: Music for everyone</title>
+<link rel="stylesheet" href="CSS/style.css">
+<link rel="stylesheet" href="CSS/utility.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+<nav class="bg-black">
+<div class="leftSide flex">
+
+<div id="menuBtn" class="hamburger">
+<img class="invert" src="Images/hamburger.svg" alt="Hamburger">
+</div>
+
+<div class="close">
+<img src="Images/close.svg" alt="">
+</div>
+
+<div class="logo">
+<img class="invert" src="Images/logo.svg" alt="Logo">
+<span class="desktop-logo">Spotify Music</span>
+<span class="mobile-logo">Spotify </span>
+</div>
+
+<ul>
+<li><button><img class="invert" src="Images/home.svg" alt="Home"></button></li>
+<li><button><img class="invert" src="Images/search.svg" alt="Search"></button></li>
+</ul>
+
+</div>
+
+<div class="rightSide">
+<div class="btn">
+<ul>
+
+<li><button id="signUp">Sign Up</button></li>
+<li><button id="Login">Log in</button></li>
+</ul>
+</div>
+</div>
+
+</nav>
+</header>
+
+<div class="container flex">
+
+<div class="left rounded">
+
+<div class="library">
+<span>Your Library</span>
+<button class="rounded"><span><img src="Images/add.svg" alt="add"></span><span>Create</span></button>
+</div>
+<div class="emptyLibrary">
+    <img src="Images/music.svg" class="invert">
+    <h3>Select an Album</h3>
+    <p>Choose an album from the right to view its songs here.</p>
+</div>
+
+<div class="songList">
+<ul></ul>
+</div>
+
+<div class="footer">
+<div class="footer-links">
+<a href="#">Legal</a>
+<a href="#">Safety & Privacy Center</a>
+<a href="#">Privacy Policy</a>
+<a href="#">Cookies</a>
+<a href="#">About Ads</a>
+<a href="#">Accessibility</a>
+</div>
+<button class="lang-btn"><img src="Images/lang.svg" class="invert"><span>English</span></button>
+</div>
+
+</div>
+
+<div class="right rounded">
+
+<div class="Trending">
+<span>Spotify PLaylists</span>
+<span>Show all</span>
+</div>
+
+<div class="cardContainer">
+
+</div>
+
+<div class="playbar">
+<div class="seekbar"><div class="circle"></div></div>
+<div class="aboveBar">
+<div class="songInfo"></div>
+<div class="playButtons">
+<img id="previous" class="invert" src="Images/previous.svg">
+<img id="play" class="invert" src="Images/Play.svg">
+<img id="next" class="invert" src="Images/next.svg">
+</div>
+<div class="timeVol">
+    <div class="songTime"></div>
+<div class="volControl">
+<img class="invert" src="Images/vol.svg">
+<div class="range">
+    <input type="range" name="volume">
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+<script src="JS/script.js"></script>
+</body>
+</html>>
