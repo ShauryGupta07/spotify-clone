@@ -147,7 +147,7 @@ async function displayAlbums() {
 async function main() {
 
     // Get all songs in the playlist
-    await getSongs("songs/ncs");
+    await getSongs("songs/Best of Billie Eillish");
     playMusic(songs[0], true);
 
     // Display all the albums on the page
